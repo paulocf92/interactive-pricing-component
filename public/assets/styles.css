@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100%;
+}
+body {
+  -webkit-font-smoothing: antialiased !important;
+}
+body,
+.slider,
+button {
+  color: #222;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+button {
+  cursor: pointer;
+}
+
+/* Website */
+/* Mobile */
+@media screen and (max-width: 375px) {
+  .app {
+    width: 350px;
+    flex-direction: column;
+  }
+
+  .slider {
+    order: 1 !important;
+  }
+
+  .costs {
+    order: 2 !important;
+  }
+
+  .price-controls {
+    padding-right: 0 !important;
+  }
+
+  .price-controls .discount > .mobile {
+    display: inline !important;
+  }
+
+  .price-controls .discount > .desktop {
+    display: none;
+  }
+}
+
+body {
+  background: url("bg-pattern.svg") no-repeat;
+  font-family: "Manrope";
+  color: #858fad;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Title */
+.title {
+  background: url("pattern-circles.svg") no-repeat center;
+  padding: 50px 10px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.title > h1 {
+  color: #293356;
+}
+
+.title > p {
+  padding-top: 5px;
+}
+
+/* Main app */
+.app {
+  background-color: #fafbff;
+  border: 1px solid #eef2fb;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  max-width: 600px;
+  font-size: 14px;
+}
+
+/* Page views */
+.pageviews {
+  text-transform: uppercase;
+  font-size: 15px;
+  order: 0;
+}
+
+/* Costs (monthly, yearly) */
+.costs {
+  order: 1;
+}
+
+.costs > span {
+  color: #293356;
+  font-weight: 800;
+  font-size: 25px;
+}
+
+.costs > sup {
+  font-size: 15px;
+}
+
+/* Price slider */
+.slider {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  min-height: 60px;
+  padding: 0 25px;
+  background: none;
+  overflow: hidden;
+  width: 100%;
+  order: 2;
+}
+
+.slider:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.slider::-webkit-slider-runnable-track {
+  background: #a5f3eb;
+  content: "";
+  height: 6px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.slider::-webkit-slider-thumb {
+  height: 26px;
+  width: 26px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: url("icon-slider.svg") no-repeat center, #10d5c2;
+  border-radius: 50%;
+  box-shadow: 0 10px 8px 4px #a5f3eb;
+  margin-top: -10px;
+}
+
+.slider::-moz-range-track {
+  background: #a5f3eb;
+  height: 6px;
+}
+
+.slider::-moz-range-thumb {
+  height: 26px;
+  width: 26px;
+  appearance: none;
+  background: url("icon-slider.svg") no-repeat center, #10d5c2;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* Price controls to switch between monthly/yearly */
+.price-controls {
+  width: 100%;
+  text-align: right;
+  padding: 20px 10px 0 0;
+  order: 3;
+}
+
+.price-controls .discount {
+  color: #ff8c66;
+  background-color: #feece7;
+  padding: 2px 8px;
+  margin: 0 15px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.price-controls .discount > .mobile {
+  display: none;
+}
+
+/* Switch monthly/yearly */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 21px;
+  margin: 0 15px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cdd7ee;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.toggle:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.switch > input:checked + .toggle {
+  background-color: #10d5c2;
+}
+
+.switch > input:checked + .toggle:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+hr {
+  border: none;
+  background-color: #eaeefb;
+  width: 100%;
+  height: 1px;
+  margin: 20px 0;
+  order: 4;
+}
+
+/* Advantages list */
+.advantages {
+  list-style: url("icon-check.svg");
+  margin-bottom: 25px;
+  order: 5;
+}
+
+.advantages li {
+  padding: 10px 0 0 10px;
+}
+
+/* Start button */
+.start {
+  border: none;
+  padding: 15px 40px;
+  font-weight: bold;
+  background-color: #293356;
+  color: #bdccff;
+  border-radius: 30px;
+  transition: 0.2s;
+  font-size: 14px;
+  order: 5;
+}
+
+.start:hover {
+  background-color: #3a4878;
+}
